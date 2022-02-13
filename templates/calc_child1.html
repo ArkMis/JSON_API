@@ -1,0 +1,20 @@
+{% extends "calc_parent.html" %}
+{% block content %}
+   
+   <form method="POST" action="/calc">
+        <label for="currenty">Wybierz walutę:</label>
+
+        <select name="currenty" id="currenty">
+            {% for item in rates %}
+               <option value={{item}}>{{item}}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="ilosc">Podaj ilość:</label>
+        <input type="number" step="any" min="0" max="10000" value="0" name="ilosc" id="ilosc"><br>
+        <br>
+        <button type="submit">Oblicz wartość</button>
+        <br><br>
+    </form>
+
+{% endblock %}
